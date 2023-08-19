@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script
+         type="module">
+  import { getAuth, 
+    createUserWithEmailAndPassword, 
+    signInWithEmailAndPassword, 
+    onAuthStateChanged }
+     from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+import { initializeApp 
+} from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+import { getAnalytics
+ } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-analytics.js";
+import { getStorage,
+   ref,
+    uploadBytesResumable,
+     getDownloadURL 
+    } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-storeage.js";
+import { getFirestore,
+  getDoc,
+  collection,
+  orderBy,
+  deleteDoc, 
+  increment,
+  query, 
+  addDoc,
+  where, 
+  setDoc,
+   getDocs,
+    updateDoc, 
+    doc,
+     Timestamp, 
+     onSnapshot, 
+     arrayUnion,
+      arrayRemove
+     } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";const firebaseConfig = {
+    apiKey: "AIzaSyABIViWmQ0rUQ33zQNwYATD_XTgL1s9rcc",
+    authDomain: "website-firebase-680cd.firebaseapp.com",
+    projectId: "website-firebase-680cd",
+    storageBucket: "website-firebase-680cd.appspot.com",
+    messagingSenderId: "881351921814",
+    appId: "1:881351921814:web:3679c08c0d623145e7f2b7",
+    measurementId: "G-CHY738C4E7"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app)
+
+const storeageDb = getFirestore(app);
+// const auth = getAuth(app);
+
+
+
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+
+
+  
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In page</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        } 
+        h3{
+            color: white;
+            padding: 15px;
+        }
+        .head{
+            display: flex;
+            justify-content: space-between;
+            background-color: blue;
+            height: 50px;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+            margin-right: 2%;
+            padding: 15px;
+        }
+        h1{
+            background-color: rgb(255, 255, 255);
+            font-size: 2rem;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        } 
+       form{
+        width: 35%;
+        height: 200px;
+        background-color: white;
+        box-shadow: 0px 0px 10px 0px black;
+       } 
+       input{
+        width: 60%;
+        height: 30px;
+        
+       }
+       button{
+        background-color: blueviolet;
+        color: white;
+        width: 20%;
+        border: none;
+        border-radius: 5%;
+        height: 30px;
+        margin-top: 2%;
+       }
+       button:hover{
+        cursor: pointer;
+       }
+    </style>
+</head>
+<body>
+<div class="head">
+    <h3>Personal Blogging app</h3>
+     <a href="signup.html">Sign Up</a>
+</div>    
+<h1>Login</h1>
+<br><br><br><br><br><br><br><br>
+<center>
+  <form action="">
+    <br><br>
+    <input type="text" name="" id="username" placeholder="Email" required><br><br>
+    <input type="password" name="" id="pass" placeholder="Password" required><br>
+    <button onclick="fun1()"><a href="index.html">Login</a></button>
+  </form>
+</center>
+</body>
+</html>
+
+
+
